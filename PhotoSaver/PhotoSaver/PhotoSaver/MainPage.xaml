@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:res="clr-namespace:PhotoSaver"
+             mc:Ignorable="d"
+             x:Class="PhotoSaver.MainPage">
+
+    <StackLayout>
+        
+        <Picker x:Name="StorageType" SelectedIndexChanged="StorageType_SelectedIndexChanged">
+            <Picker.Items>
+                <x:Static>res:Signs.InternalStorageType</x:Static>
+                <x:Static>res:Signs.ExternalStorageType</x:Static>
+            </Picker.Items>
+        </Picker>
+
+        <ScrollView>
+            <StackLayout>
+
+                <Picker x:Name="InternalStorageType" IsVisible="False" SelectedIndexChanged="InternalStorageType_SelectedIndexChanged">
+                    <Picker.Items>
+                        <x:String>ApplicationData</x:String>
+                        <x:String>Desktop</x:String>
+                        <x:String>LocalApplicationData</x:String>
+                        <x:String>MyDocuments</x:String>
+                        <x:String>MyMusic</x:String>
+                        <x:String>MyPictures</x:String>
+                        <x:String>MyVideos</x:String>
+                        <x:String>Personal</x:String>
+                    </Picker.Items>
+                </Picker>
+
+                <StackLayout x:Name="Dirs">
+
+                </StackLayout>
+                <Button x:Name="CreateFolder" Text="Створити папку" Clicked="CreateFolder_Clicked"/>
+
+            </StackLayout>
+        </ScrollView>
+
+        <Entry x:Name="Filename" Placeholder="Ім'я файла"/>
+
+        <Button x:Name="MakePhotoButton" Text="Сфотографувати" Clicked="MakePhotoButton_Clicked"/>
+    </StackLayout>
+
+</ContentPage>

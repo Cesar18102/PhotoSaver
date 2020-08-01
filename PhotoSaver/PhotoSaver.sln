@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29613.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotoSaver.Android", "PhotoSaver\PhotoSaver.Android\PhotoSaver.Android.csproj", "{78DF4197-4A08-444B-9909-0E72D1CF9B58}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotoSaver", "PhotoSaver\PhotoSaver\PhotoSaver.csproj", "{3C2CF83B-299F-4EDA-8548-229F97F34AF2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{78DF4197-4A08-444B-9909-0E72D1CF9B58}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78DF4197-4A08-444B-9909-0E72D1CF9B58}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78DF4197-4A08-444B-9909-0E72D1CF9B58}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{78DF4197-4A08-444B-9909-0E72D1CF9B58}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78DF4197-4A08-444B-9909-0E72D1CF9B58}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78DF4197-4A08-444B-9909-0E72D1CF9B58}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{3C2CF83B-299F-4EDA-8548-229F97F34AF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C2CF83B-299F-4EDA-8548-229F97F34AF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C2CF83B-299F-4EDA-8548-229F97F34AF2}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{3C2CF83B-299F-4EDA-8548-229F97F34AF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C2CF83B-299F-4EDA-8548-229F97F34AF2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C2CF83B-299F-4EDA-8548-229F97F34AF2}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8C5D5CE7-D5C6-4069-B918-960D4B3B07CB}
+	EndGlobalSection
+EndGlobal
