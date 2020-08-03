@@ -60,6 +60,18 @@ namespace PhotoSaver
             UpdateFilename();
         }
 
+        private void MoveUp_Clicked(object sender, EventArgs e)
+        {
+            if (Dirs.Children.Count == 0)
+                return;
+
+            Dirs.Children.RemoveAt(Dirs.Children.Count - 1);
+            Dirs.Children.RemoveAt(Dirs.Children.Count - 1);
+
+            PushPicker();
+            UpdateFilename();
+        }
+
         private void PushPicker()
         {
             Picker picker = new Picker();
@@ -99,7 +111,7 @@ namespace PhotoSaver
                 return;
 
             int filesCount = Directory.GetFiles(path).Length;
-            Filename.Text = $"{filesCount + 1}.png";
+            Filename.Text = $"{filesCount + 1}.jpeg";
         }
 
         private async void CreateFolder_Clicked(object sender, EventArgs e)

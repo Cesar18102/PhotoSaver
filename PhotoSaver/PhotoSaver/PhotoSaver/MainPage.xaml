@@ -35,7 +35,9 @@
                 <StackLayout x:Name="Dirs">
 
                 </StackLayout>
+                
                 <Button x:Name="CreateFolder" Text="Створити папку" Clicked="CreateFolder_Clicked"/>
+                <Button x:Name="MoveUp" Text="Вверх" Clicked="MoveUp_Clicked"/>
 
             </StackLayout>
         </ScrollView>
