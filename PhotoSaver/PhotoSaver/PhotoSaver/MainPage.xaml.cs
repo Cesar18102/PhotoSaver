@@ -57,6 +57,7 @@ namespace PhotoSaver
             while (Dirs.Children.Count > 0 && !Dirs.Children.Last().Id.Equals(senderId))
                 Dirs.Children.RemoveAt(Dirs.Children.Count - 1);
             PushPicker();
+            UpdateFilename();
         }
 
         private void PushPicker()
@@ -88,6 +89,17 @@ namespace PhotoSaver
                 string folder = dir.Substring(dir.LastIndexOf('/') + 1);
                 lastPicker.Items.Add(folder);
             }
+        }
+
+        private void UpdateFilename()
+        {
+            string path = GetPath();
+
+            if (path == null || !Directory.Exists(path))
+                return;
+
+            int filesCount = Directory.GetFiles(path).Length;
+            Filename.Text = $"{filesCount + 1}.png";
         }
 
         private async void CreateFolder_Clicked(object sender, EventArgs e)
@@ -172,20 +184,28 @@ namespace PhotoSaver
                 return;
             }
 
-            using (Stream stream = await Camera.TakePhoto(Camera.CameraLocation.REAR))
+            int count = 0;
+
+            while (true)
             {
-                if (stream == null)
-                    return;
+                using (Stream stream = await Camera.TakePhoto(Camera.CameraLocation.REAR))
+                {
+                    if (stream == null)
+                        break;
 
-                byte[] data = new byte[stream.Length];
-                stream.Read(data, 0, data.Length);
+                    byte[] data = new byte[stream.Length];
+                    stream.Read(data, 0, data.Length);
 
-                string fullPath = Path.Combine(path, Filename.Text);
-                using (FileStream fs = File.Create(fullPath))
-                    fs.Write(data, 0, data.Length);
+                    string fullPath = Path.Combine(path, Filename.Text);
+                    using (FileStream fs = File.Create(fullPath))
+                        fs.Write(data, 0, data.Length);
+                }
+
+                ++count;
+                UpdateFilename();
             }
 
-            await DisplayAlert("Файл збережено", "Файл збережено", "ОК");
+            await DisplayAlert("Збережено", $"Збережено {count} файлів", "ОК");
         }
 
         public class State
